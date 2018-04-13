@@ -6,11 +6,6 @@ bot.on('ready', function () {
 })
 
 bot.login('NDM0MTgzODkwNjgxNDYyNzg0.DbGtKg.1WmC3vj94U-LK9lZ6WkG8ZTSXWY')
-const Discord = require('discord.js');
-const client = new Discord.Client();
-
-client.login('NDM0MTgzODkwNjgxNDYyNzg0.DbHczg.-iJvOL7R9f_zeF7iSQHwYycHGUU');
-
 client.on('message', message => {
   // Voice only works in guilds, if the message does not come from a guild,
   // we ignore it
