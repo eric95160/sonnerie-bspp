@@ -1,6 +1,7 @@
 {
   "name": "sonnerie bspp",
   "version": "1.0.0",
+  "main": "index.js",
   "dependencies": {
     "discord.js": "^11.3.2"
   }
