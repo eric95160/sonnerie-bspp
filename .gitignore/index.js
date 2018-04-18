@@ -29,5 +29,3 @@ client.on('message', message => {
     }
   }
 });
-// Play an mp3 from a URL
-connection.playArbitraryInput('http://mysite.com/sound.mp3');
