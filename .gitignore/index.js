@@ -6,7 +6,7 @@ bot.on('ready', function () {
 })
 
 bot.login('NDM0MTgzODkwNjgxNDYyNzg0.DbGtKg.1WmC3vj94U-LK9lZ6WkG8ZTSXWY')
-const Discord = require('discord.js');
+
 const client = new Discord.Client();
 
 client.login('NDM0MTgzODkwNjgxNDYyNzg0.DbGtKg.1WmC3vj94U-LK9lZ6WkG8ZTSXWY');
