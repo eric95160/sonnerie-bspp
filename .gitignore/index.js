@@ -7,34 +7,23 @@ bot.on('ready', function () {
 
 bot.login('NDM0MTgzODkwNjgxNDYyNzg0.DbGtKg.1WmC3vj94U-LK9lZ6WkG8ZTSXWY')
 
-bot.on('message', message => {
+client.on('message', message => {
+  // Voice only works in guilds, if the message does not come from a guild,
+  // we ignore it
+  if (!message.guild) return;
 
-  if (message.content.startsWith('!play')) {
-    // On récupère le premier channel audio du serveur
-    let voiceChannel = message.guild.channels
-      .filter(function (channel) { return channel.type === 'voice' })
-      .first()
-    // On récupère les arguments de la commande 
-    // il faudrait utiliser une expression régulière pour valider le lien youtube
-    let args = message.content.split(' ')
-    // On rejoint le channel audio
-    voiceChannel
-      .join()
-      .then(function (connection) {
-        // On démarre un stream à partir de la vidéo youtube
-        let stream = YoutubeStream(args[1])
-        stream.on('error', function () {
-          message.reply("Je n'ai pas réussi à lire cette vidéo :(")
-          connection.disconnect()
+  if (message.content === '/join') {
+    // Only try to join the sender's voice channel if they are in one themselves
+    if (message.member.voiceChannel) {
+      message.member.voiceChannel.join()
+        .then(connection => { // Connection is an instance of VoiceConnection
+          message.reply('I have successfully connected to the channel!');
         })
-        // On envoie le stream au channel audio
-        // Il faudrait ici éviter les superpositions (envoie de plusieurs vidéo en même temps)
-        connection
-          .playStream(stream)
-          .on('end', function () {
-            connection.disconnect()
-          })
-      })
+        .catch(console.log);
+    } else {
+      message.reply('You need to join a voice channel first!');
+    }
   }
-
-})
+});
+// Play an mp3 from a URL
+connection.playArbitraryInput('http://mysite.com/sound.mp3');
