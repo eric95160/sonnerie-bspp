@@ -1,7 +1,7 @@
 const  Discord  =  require ( ' discord.js ' );
 const  music  =  require ( ' discord.js-music-v11 ' );
-const  Bot  =  nouveau  Discord.Client ();
-const  token  =  " <auth_token> "  // Recommandé pour charger à partir du fichier json.
+const  Bot  =  nouveau  Discord.Client (434183890681462784);
+const  token  =  " <'NDM0MTgzODkwNjgxNDYyNzg0.DbGtKg.1WmC3vj94U-LK9lZ6WkG8ZTSXWY'> "  // Recommandé pour charger à partir du fichier json.
 
 Bot . sur ( ' prêt ' , () => {
      console . log ( ` [Start] $ { nouvelle  date () } ` );
